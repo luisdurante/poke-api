@@ -1,0 +1,40 @@
+{
+  "name": "broken-picture-phone-brasil",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.ts",
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports"
+  },
+  "devDependencies": {
+    "@types/camelcase": "^5.2.0",
+    "@types/cors": "^2.8.7",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.7",
+    "@types/mongoose": "^5.7.36",
+    "@types/socket.io": "^2.1.11",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
+    "csv-parser": "^2.3.3",
+    "eslint": "^7.7.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.1",
+    "sucrase": "^3.15.0",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "camelcase": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.1"
+  }
+}
