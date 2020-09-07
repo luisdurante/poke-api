@@ -2,13 +2,13 @@ import Pokemon from '../models/Pokemon'
 import { Request, Response } from 'express'
 
 export async function get (req:Request, res:Response):Promise<Response> {
-  const { id } = req.body
+  const { pokedexId } = req.body
 
-  const match = await Pokemon.findOne({ pokedexNumber: id })
+  const pokemon = await Pokemon.findOne({ pokedexNumber: pokedexId })
 
-  if (!match) {
-    return res.status(400).json({ error: 'Match not found' })
+  if (!pokemon) {
+    return res.status(400).json({ error: 'Pokemon not found' })
   }
 
-  return res.status(200).json(match)
+  return res.status(200).json(pokemon)
 }
