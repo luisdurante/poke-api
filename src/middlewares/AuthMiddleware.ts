@@ -1,5 +1,5 @@
 import { Response, NextFunction } from 'express'
-import { IUserAuth } from './authInterface'
+import { IUserAuth } from '../interfaces/IUserAuth'
 import authConfig from '../config/auth'
 import jwt from 'jsonwebtoken'
 
