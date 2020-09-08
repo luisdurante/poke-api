@@ -1,15 +1,17 @@
 import { Router } from 'express'
-import PokemonController from './controllers/PokemonController'
-import UserController from './controllers/UserController'
+import AuthMiddleware from './middlewares/AuthMiddleware'
+import controllers from './controllers'
 
 const routes = Router()
 
-routes.get('/ping', (req, res) => {
+routes.get('/ping', AuthMiddleware.authHeader, (req, res) => {
   return res.send('pong')
 })
 
-routes.post('/users', UserController.store)
+routes.post('/users', controllers.UserController.store)
 
-routes.get('/poke', PokemonController.get)
+routes.post('/sessions', controllers.SessionController.store)
+
+routes.get('/poke', controllers.PokemonController.get)
 
 export default routes

@@ -1,3 +1,4 @@
 node_modules
 csvcatch.txt
 poke.csv
+src/config/auth.ts
