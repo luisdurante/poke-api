@@ -1,18 +1,9 @@
-import { Schema, model, Document, Model } from 'mongoose'
+import { Schema, model } from 'mongoose'
+import IUser from '../interfaces/user/IUser'
+import IUserModel from '../interfaces/user/IUserModel'
 import jwt from 'jsonwebtoken'
 import bcrpty from 'bcrypt'
 import authConfig from '../config/auth'
-
-interface IUser extends Document{
-  name?: string,
-  email?: string,
-  password?: string
-  compareHash(password:string):Promise<boolean>
-}
-
-export interface IUserModel extends Model<IUser> {
-  generateToken(user:IUser):string
-}
 
 const UserSchema = new Schema({
   name: {
