@@ -1,10 +1,9 @@
-import { Response, NextFunction } from 'express'
-import { IUserAuth } from '../interfaces/IUserAuth'
+import { Request, Response, NextFunction } from 'express'
 import authConfig from '../config/auth'
 import jwt from 'jsonwebtoken'
 
 class AuthMiddleware {
-  async authHeader (req:IUserAuth, res:Response, next:NextFunction) {
+  async authHeader (req:Request, res:Response, next:NextFunction) {
     const authHeader = req.headers.authorization
 
     if (!authHeader) {
