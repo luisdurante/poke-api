@@ -12,6 +12,10 @@ routes.post('/users', controllers.UserController.store)
 
 routes.post('/sessions', controllers.SessionController.store)
 
-routes.get('/poke', controllers.PokemonController.get)
+// pokemon routes
+
+routes.get('/pokemon/:pokedexId', controllers.PokemonController.get)
+routes.post('/team', AuthMiddleware.authHeader, controllers.TeamController.store)
+// routes.get('/team', AuthMiddleware.authHeader, controllers.TeamController.list)
 
 export default routes
